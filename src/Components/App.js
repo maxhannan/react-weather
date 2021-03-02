@@ -1,6 +1,9 @@
-import Forecast from "./Forecast";
 import { useEffect, useState } from 'react';
 import { getWeather } from './getWeather'
+
+import Forecast from "./Forecast";
+import Header from "./Header";
+
 function App() {
   const [data, setData] = useState(null)
   const [pending, setPending] = useState(true)
@@ -18,6 +21,7 @@ function App() {
       return
     }
     setData( await wdata)
+
     setPending(false)
   }
 
@@ -29,9 +33,10 @@ function App() {
 
   return (
     <div className="App">
-      {error && <h1>Sorry... No data found</h1>}
+      <Header wSearch = {weather}/>
+      {error && <h4>Sorry... No data found, {error}</h4>}
       {pending && <h2>Loading...</h2>}
-      {!pending && !error && <Forecast data = {data} wSearch = {weather} />}
+      {!pending && !error && <Forecast data = {data} />}
     </div>
   );
 }

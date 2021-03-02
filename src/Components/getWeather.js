@@ -1,21 +1,26 @@
+// Grabs Weather Data and return formatted info
 export const getWeather = async (search) => {
   // openWeather Key
   const apiKey = '070d5b93cd86e7baa71b2a5bf2276467'
+  const baseUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat='
   const nameData = await getName(search)
+  
   const coords = nameData.geometry.location
   const name = nameData.formatted_address
-  const oneCallURL = `
-  https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lng}&appid=${apiKey}`
+
+  const oneCallURL = `${baseUrl}${coords.lat}&lon=${coords.lng}&appid=${apiKey}`
   
   const response = await fetch(oneCallURL, { mode: 'cors' })
   const data = await response.json()
+
   return weatherFormatter(data, name)
 }
 
 const getName = async (search) => {
   // Google Key
   const apiKey = 'AIzaSyAzvI9cu1Zk8OegSCLn8Yv0BTagQSWDMFQ'
-  const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${search}&key=${apiKey}`
+  const baseurl = 'https://maps.googleapis.com/maps/api/geocode/json?address='
+  const url =`${baseurl}${search}&key=${apiKey}`
   
   const response = await fetch(url, { mode: 'cors' })
   const data = await response.json()
@@ -64,6 +69,7 @@ const weekDay = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const toCelsius = (K) => Math.floor(K - 273.15)
 const toFahrenheit = (K) => Math.floor(toCelsius(K) * (9 / 5) + 32)
 const getDay = (date) => new Date(date * 1000) // converts unix timestamp to date
+
 const getIconURL = (iconId, large = true) => { // retrieves appropiate icon url based on weather code from api
   let url
   if (large) {
