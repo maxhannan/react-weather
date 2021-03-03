@@ -1,2 +1,62 @@
 body 
-  margin: 0;
+  margin: 0
+
+  
+.App 
+  display: flex
+  flex-direction: column
+header
+  display: flex
+  background-color: lightyellow
+  height: 8vh
+  align-items: center
+  justify-content: flex-end
+main
+  display: flex
+  flex-direction: column
+
+#forecast
+  display: grid
+  grid-template-columns: 6fr 4fr
+  grid-auto-rows: 300px
+
+.weatherInfo
+  background-color: lightpink
+  display: flex
+  flex-direction: column
+  justify-content: center
+  animation: appear 1.5s ease 
+  font:
+    size: 1.5em
+  h1
+    padding: 0px
+    margin: 0px
+    font:
+      size: 4em
+  h2
+    margin: 0px
+    font:
+      size: 2em
+
+.todayForecast
+  background-color: lightblue
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  animation: appear 1.5s ease 
+  h1
+    padding: 0px
+    margin: 0px
+    font:
+      size: 8em
+  h2
+    margin: 0px
+    font:
+      size: 4em
+ 
+@keyframes appear
+  0%
+    opacity: 0
+  100%
+    opacity: 1
