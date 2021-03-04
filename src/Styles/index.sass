@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700&display=swap')
-@use 'reset'
 
+*, *:before, *:after
+    box-sizing: border-box
 body 
   margin: 0
   background-color: #F5F5F5  
@@ -17,7 +18,143 @@ h1, h2, h3
   color: black
   max-width: 100%
   font-weight: 300
+.main
+  display: grid;
+  // background-color: blue;
+  grid-template-columns: 3fr  7fr;
+  height: 85vh;
+  width: 100vw;
+  grid-gap: 1.5em
+  padding: 1.5em
+
+
+.dailyInfo
+  // background-color: lightblue;
+  display: grid
+  height: 75%
+  padding: .8em
+  // padding-top: 0px
+  grid-gap: 1em
+  grid-auto-rows: 1fr
+  grid-auto-columns: 1fr;
+  grid-template-areas: "wind wind wind precip" "sunrise sunset clock clock";
+
+
+.dailyForecast
+  background-color: white
+  border-radius: 30px
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+
+.sevenDayContainer
+  height: 25%
+  display: grid
+  padding: .8em
+  padding-top: 0px
+  grid-template-columns: repeat(7, 1fr)
+  grid-gap: 1em
+  overflow: scroll
+
+.sevenItem
+  background-color: white
+  display: flex
+  flex-direction: column
+  border-radius: 30px
+  min-width: 80px
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+.imgContainer
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 40%
+  img
+    height: 60px
+.dayContainer
+  height: 30%
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 25px
+.tempContainer
+  height: 30%
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 25px
+
+.wind
+  display: flex
+  grid-area: wind;
+  align-items: center
+  justify-content: space-between
+  background-color: white;
+.windContainer
+  display: flex
+  align-items: center
+  width: 100%
+  justify-content: center
+  // background-color: red
+  img
+    height: 160px
+.windSpeed
+  display: flex
+  align-items: center
+  width: 100%
+  justify-content: center
+  font-size: 5vw
+.arrow
+  font-size: 100px
+  animation: arrow 1s linear
   
+
+
+    
+
+.precip 
+  grid-area: precip;
+  background-color: white;
+
+.sunrise 
+  grid-area: sunrise;
+  background-color: white;
+
+.sunset 
+  grid-area: sunset;
+  background-color: white;
+
+.clock 
+  grid-area: clock;
+  background-color: white;
+
+.item
+  border-radius: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+
+.gridContainer
+  border-radius: 30px
+  display: flex
+  flex-direction: column
+  
+  
+.sunContainer
+  display: flex
+  align-items: center
+  width: 100%
+  justify-content: center
+  height: 70%
+  // background-color: red
+  img
+    height: 100px
+
+.sunText
+
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 45px
+  font-weight: 400
+
 .loadContainer
   display: flex
   align-items: center
@@ -38,15 +175,20 @@ h1, h2, h3
     transform: rotate(0deg)
   100%
     transform: rotate(360deg)
+@keyframes arrow
+  0%
+    transform: rotate(0deg)
+  100%
 
 .search
   height: 8vh
-  width: 100vw
+  width: 90vw
   display: flex
   align-items: center
   justify-content: flex-end
-  padding-right: 10%
+
   margin-bottom: 2vh
+  border-bottom: 1px solid black
   .searchSubmit
     background-color: transparent
     border: none
@@ -59,9 +201,10 @@ h1, h2, h3
     font-family: 'Chivo', sans-serif
   input:focus
     outline: none
-@media screen and ( max-width: 900px )
+@media screen and ( max-width: 1000px )
   .search
-    justify-content: center
+    justify-content: flex-start
+    width: 80vw;
     .searchSubmit
       background-color: transparent
       border: none
@@ -72,4 +215,43 @@ h1, h2, h3
       border: none
       width: 80%
       font-size: 5vw
-      font-family: 'Chivo', sans-serif
+      font-family: 'Chivo', sans-serif\
+  .main 
+    grid-template-columns: 1fr;
+    grid-gap: .5em  
+  .sevenDayContainer
+    height: 30%
+    display: grid
+    grid-gap: .5em   
+  .sevenItem
+      min-width: 0px
+  .dailyForecast
+    height: 25vh
+  .gridContainer
+    height: 50vh
+  .imgContainer
+    height: 40%
+    img
+      height: 50px
+  .tempContainer
+    font-size: 15px
+  .dayContainer
+    font-size: 15px
+  .sunContainer
+    img
+      height: 60px
+  .sunText
+    font-size: 25px
+  .windContainer
+    img
+      height: 80px
+  .windSpeed
+    display: flex
+    align-items: center
+    width: 100%
+    justify-content: center
+    font-size: 5vw
+  .arrow
+    font-size: 50px
+    animation: arrow 1s linear
+  

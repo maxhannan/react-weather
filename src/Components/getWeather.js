@@ -72,7 +72,7 @@ const weatherFormatter = (info, placeName) => {
       tempF: toFahrenheit(current.temp),
       wind: (current.wind_speed * 2.237).toFixed(0),
       windDir: current.wind_deg,
-      sunrise: sunrise.getHours() + ':' + sunrise.getMinutes() ,
+      sunrise: sunrise.toLocaleTimeString().split(':').slice(0,2).join(':'),
       humidity: current.humidity,
       descrip: current.weather[0].description,
       iconSrc: getIconURL(current.weather[0].icon)
@@ -90,7 +90,7 @@ const getDay = (date) => new Date(date * 1000) // converts unix timestamp to dat
 
 const getIconURL = (iconId, large = true) => { // retrieves appropiate icon url based on weather code from api
   let url
-  if (large) {
+  
     switch (iconId) {
       case '01d': 
         url = oned;
@@ -150,8 +150,5 @@ const getIconURL = (iconId, large = true) => { // retrieves appropiate icon url 
         url = oned
     }
 
-  } else {
-    url = `http://openweathermap.org/img/wn/${iconId}@2x.png`
-  }
-  return url
-}
+    return url
+  } 

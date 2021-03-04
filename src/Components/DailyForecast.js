@@ -3,8 +3,8 @@ import DailyTemp from "./DailyTemp";
 
 const DailyForecast = ({data}) => {
   return ( 
-    <div className="dailyForecast">
-      <DailyTemp data = {data}/>
+    <div className="item dailyForecast">
+      {/* <DailyTemp data = {data}/> */}
      
     </div>
   );

@@ -1,4 +1,3 @@
-import '../Styles/dailyInfo.scss'
 import BtnHolder from './BtnHolder';
 import DailyInfo from "./DailyInfo";
 import DailyForecast from './DailyForecast';
@@ -8,9 +7,11 @@ import SevenDay from './SevenDay';
 const Main = ({data}) => {
   return ( 
     <div className="main">
-      <DailyForecast data = {data.daily}/>
-      <DailyInfo />
-      <SevenDay/> 
+      <div className="dailyForecast"/>
+      <div className="gridContainer">
+        <SevenDay data = {data}/> 
+        <DailyInfo data = {data}/>
+      </div>
     </div>
     
 

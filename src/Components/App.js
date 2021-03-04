@@ -4,6 +4,8 @@ import  Searchbar from './Header'
 import Loader from './Loader';
 // import styled from 'styled-components'
 import Main from './Main';
+import '../Styles/reset.sass'
+import '../Styles/main.scss'
 
 
 function App() {
