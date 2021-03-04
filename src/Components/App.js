@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { getWeather } from './getWeather'
-
-import Forecast from "./Forecast";
-import Header from "./Header";
+import  Searchbar from './Header'
+import Loader from './Loader';
+// import styled from 'styled-components'
+import Main from './Main';
 
 function App() {
   const [data, setData] = useState(null)
@@ -11,7 +12,8 @@ function App() {
   const [isCelsius, setisCelsius] = useState(false)
 
   const togCelsius = () => {
-    setisCelsius(!isCelsius)
+    console.log('working')
+    setisCelsius((isCelsius) => !isCelsius)
   }
   
   const weather = async (search) => {
@@ -31,17 +33,15 @@ function App() {
   }
 
   useEffect(()=>{
-    weather('Minneapolis')
+    weather('Scottsdale')
   },[])
 
   return (
     <div className="App">
-      <Header wSearch = {weather} togCelsius = {togCelsius}/>
-      <main>
-        {error && <h4>Sorry... No data found, {error}</h4>}
-        {pending && <h2>Loading...</h2>}
-        {!pending && !error && <Forecast data = {data} isCelsius = {isCelsius}/>}
-      </main>
+      <Searchbar getWeather = {weather}/>
+      {error && <h4>Sorry... No data found, {error}</h4>}
+      {pending && <Loader/>}
+      {!pending && !error && <Main  data = {data}/>}
       
     </div>
   );

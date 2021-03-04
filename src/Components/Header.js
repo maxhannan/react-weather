@@ -1,28 +1,29 @@
-import React, { useState } from 'react';
+import {BiSearchAlt} from 'react-icons/bi'
+import {useState} from 'react'
 
-const Header = ({wSearch, togCelsius}) => {
-  const [searchVal, setSearchVal] = useState('')
+const Searchbar = ({getWeather}) => {
+  const [search, setSearch] = useState('')
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    if(searchVal !== ''){
-      wSearch(searchVal)
-      setSearchVal('')
+    if(search !== ''){
+      getWeather(search)
+      setSearch('')
     }
   }
-
+  
   return ( 
-    <header>
-      <button onClick ={togCelsius}>Celsius?</button>
-      <form onSubmit = { handleSubmit }>
+    <div className="search">
+      <button type = 'submit' className = 'searchSubmit'><BiSearchAlt/></button>
+      <form onSubmit = {handleSubmit}>
         <input 
-        type="text"
-        value = {searchVal}
-        onChange = {(e) => setSearchVal(e.target.value) }/>
-        <input type="submit" value = 'search' />
+        type = 'text' 
+        placeholder = 'Search for places...' 
+        value = {search} 
+        onChange ={(e) => setSearch(e.target.value)}/>
       </form>
-    </header>
+    </div>
   );
 }
  
-export default Header;
+export default Searchbar;

@@ -1,62 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700&display=swap')
+@use 'reset'
+
 body 
   margin: 0
-
+  background-color: #ffffff
   
+h1, h2, h3
+  margin: 0
+
 .App 
   display: flex
   flex-direction: column
-header
+  height: 100vh
+  overflow: hidden
+  font-family: 'Chivo', sans-serif
+  color: black
+  max-width: 100%
+  font-weight: 300
+.loadContainer
   display: flex
-  background-color: lightyellow
+  align-items: center
+  justify-content: center
+  height: 92vh
+  background-color: #F5F5F5
+  font-size: 15vw	
+.loader
+  display: flex
+  align-items: center
+  justify-content: center
+  animation: spin 1s linear 0s infinite 
+  transform-origin: center
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+.search
   height: 8vh
+
+  display: flex
   align-items: center
   justify-content: flex-end
-main
+  padding-right: 6%
+
+  .searchSubmit
+    background-color: transparent
+    border: none
+    font-size: 2vw
+    padding-top: .5%
+  input
+    background-color: transparent
+    border: none
+    font-size: 2vw
+    font-family: 'Chivo', sans-serif
+  input:focus
+    outline: none
+
+.main
+  height: 92vh
+  background-color: #d4d3d382	
   display: flex
   flex-direction: column
-
-#forecast
-  display: grid
-  grid-template-columns: 6fr 4fr
-  grid-auto-rows: 300px
-
-.weatherInfo
-  background-color: lightpink
-  display: flex
-  flex-direction: column
-  justify-content: center
-  animation: appear 1.5s ease 
-  font:
-    size: 1.5em
-  h1
-    padding: 0px
-    margin: 0px
-    font:
-      size: 4em
-  h2
-    margin: 0px
-    font:
-      size: 2em
-
-.todayForecast
-  background-color: lightblue
-  display: flex
-  flex-direction: column
-  justify-content: center
   align-items: center
-  animation: appear 1.5s ease 
-  h1
-    padding: 0px
+
+.dailyForecast
+  height: 45vh
+  width: 80%
+  display: grid
+  grid-template-columns: 3fr 4fr
+  grid-column-gap: 1em
+  padding-left: 1em
+  padding-right: 1em
+  // background-color: blue
+
+.dailyTemp
+  background-color: white
+  border-radius: 30px
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  max-height: 45vh
+
+.weatherIcon
+  display: flex
+  align-items: center
+  justify-content: center
+  border:
+    top-left-radius: 30px
+    top-right-radius: 30px
+  height: 65%
+  // background-color: lightblue
+  img
     margin: 0px
-    font:
-      size: 8em
-  h2
-    margin: 0px
-    font:
-      size: 4em
- 
-@keyframes appear
-  0%
-    opacity: 0
-  100%
-    opacity: 1
+    height: 110%
+
+.info
+  display: grid
+  grid-template-columns: 8fr 2fr 
+  height: 100%
+  width: 90%
+.location
+  display: flex
+  align-items: center
+  font-size: 4vh
+.temp
+  display: flex
+  align-items: center
+  font-size: 12vh
+
+
+.btnHolder
+  height: 8vh
+  width: 85%
+  // background-color: red
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  padding-right: 4%
+  .celBtn, .fahBtn
+    width: 30px
+    height: 30px
+    display: flex
+    align-items: center
+    justify-content: center
+    border: 1px solid black
+    border-radius: 50%
+    margin: .5em
+
+    &:hover
+      background-color: black
+      color: white
+    &.active
+      background-color: black
+      color: white
+
+.sevenDay
+  margin-top: 5vh
+  display: grid
+  height: 25vh
+  grid-gap: 1em
+  width: 80%
+  grid-template-columns: repeat(7, 1fr)
+.sevenItem
+  background-color: white
+  border-radius: 30px
+@media screen and ( max-width: 1000px )
+  .dailyTemp
+    max-height: 35vh
+    width: 90%
+  .dailyForecast
+      grid-template-columns: 1fr 
+      grid-gap: .5em
+      height: 60vh
+      width: 90%
+  .sevenDay
+    width: 90%
+    height: 15vh
+    margin-top: 3.5em
+    overflow: scroll
+  .sevenItem
+    min-width: 100px
+    
+  .search
+    justify-content: center
+    .searchSubmit
+      background-color: transparent
+      border: none
+      font-size: 5vw
+      padding-top: 1.5%
+    input
+      background-color: transparent
+      border: none
+      font-size: 6vw
+      font-family: 'Chivo', sans-serif
+    input:focus
+      outline: none

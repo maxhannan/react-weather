@@ -1,0 +1,47 @@
+
+.wind{
+  grid-area: wind;
+  background-color: white;
+}
+.precip {
+  grid-area: precip;
+  background-color: white;
+}
+.sunrise {
+  grid-area: sunrise;
+  background-color: white;
+}
+.sunset {
+  grid-area: sunset;
+  background-color: white;
+}
+.clock {
+  grid-area: clock;
+  background-color: white;
+}
+.item{
+  border-radius: 30px;
+}
+.dailyInfo {
+  display: grid;
+  min-height: 30vh;
+  grid-template-areas: 
+    "wind wind wind precip"
+    "sunrise sunset clock clock"
+   ;
+  grid-gap: 1em
+}
+@media screen and ( max-width: 1000px ){
+  .dailyInfo {  
+    width: 90%;
+    grid-gap: .5em;
+    grid-template-areas: 
+      "wind wind wind "
+      "sunrise sunset precip "
+   ;
+  }
+  .clock{
+    display: none;
+  }
+
+}

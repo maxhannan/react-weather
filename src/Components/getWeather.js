@@ -1,4 +1,22 @@
 // Grabs Weather Data and return formatted info
+import oned from '../assets/01d.png'
+import onen from '../assets/01n.png'
+import twod from '../assets/02d.png'
+import twon from '../assets/02n.png'
+import threed from '../assets/03d.png'
+import threen from '../assets/03n.png'
+import fourd from '../assets/04d.png'
+import fourn from '../assets/04n.png'
+import nined from '../assets/09d.png'
+import ninen from '../assets/09n.png'
+import tend from '../assets/10d.png'
+import tenn from '../assets/10n.png'
+import elevend from '../assets/11d.png'
+import elevenn from '../assets/11n.png'
+import thirtd from '../assets/13d.png'
+import thirtn from '../assets/13n.png'
+import fifd from '../assets/50d.png'
+import fifn from '../assets/50n.png'
 export const getWeather = async (search) => {
   // openWeather Key
   const apiKey = '070d5b93cd86e7baa71b2a5bf2276467'
@@ -30,7 +48,7 @@ const getName = async (search) => {
 
 const weatherFormatter = (info, placeName) => {
   const current = info.current
-
+  const sunrise = getDay(current.sunrise)
   const sevenDayForecast = info.daily.map(day => {
     const dayinfo = {
       day: weekDay[getDay(day.dt).getDay()],
@@ -52,9 +70,9 @@ const weatherFormatter = (info, placeName) => {
       day: weekDay[getDay(current.dt).getDay()],
       tempC: toCelsius(current.temp),
       tempF: toFahrenheit(current.temp),
-      wind: current.wind_speed,
+      wind: (current.wind_speed * 2.237).toFixed(0),
       windDir: current.wind_deg,
-      sunrise: getDay(current.sunrise).toLocaleTimeString(),
+      sunrise: sunrise.getHours() + ':' + sunrise.getMinutes() ,
       humidity: current.humidity,
       descrip: current.weather[0].description,
       iconSrc: getIconURL(current.weather[0].icon)
@@ -73,7 +91,65 @@ const getDay = (date) => new Date(date * 1000) // converts unix timestamp to dat
 const getIconURL = (iconId, large = true) => { // retrieves appropiate icon url based on weather code from api
   let url
   if (large) {
-    url = `http://openweathermap.org/img/wn/${iconId}@4x.png`
+    switch (iconId) {
+      case '01d': 
+        url = oned;
+        break
+      case '01n': 
+        url = onen;
+        break
+      case '02d': 
+        url = twod;
+        break
+      case '02n': 
+        url = twon;
+        break
+      case '03d': 
+        url = threed;
+        break
+      case '03n': 
+        url = threen;
+        break
+      case '04d': 
+        url = fourd;
+        break
+      case '04n': 
+        url = fourn;
+        break
+      case '09d': 
+        url = nined;
+        break
+      case '09n': 
+        url = ninen;
+        break
+      case '10d': 
+        url = tend;
+        break
+      case '10n': 
+        url = tenn;
+        break
+      case '11d': 
+        url = elevend;
+        break
+      case '11n': 
+        url = elevenn;
+        break
+      case '13d': 
+        url = thirtd;
+        break
+      case '13n': 
+        url = thirtn;
+        break
+      case '50d': 
+        url = fifd;
+        break
+      case '50n': 
+        url = fifn;
+        break
+      default: 
+        url = oned
+    }
+
   } else {
     url = `http://openweathermap.org/img/wn/${iconId}@2x.png`
   }
