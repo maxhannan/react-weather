@@ -5,6 +5,7 @@ import Loader from './Loader';
 // import styled from 'styled-components'
 import Main from './Main';
 
+
 function App() {
   const [data, setData] = useState(null)
   const [pending, setPending] = useState(true)

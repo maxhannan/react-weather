@@ -1,3 +1,52 @@
+.dailyInfo{
+  // background-color: blue;
+  grid-area: dayInfo;
+}
+.dailyForecast{
+  grid-area: dayFore;
+  width: 100%;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+.sevenDayContainer{
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  grid-gap: 70px;
+  grid-area: sdCont;
+
+  overflow: scroll;
+  margin-top: 10px;
+
+  
+}
+.sevenItem{
+  background-color: white;
+  border-radius: 30px;
+  height: 80%;
+  width: 120px;
+  min-width: 50px;
+  margin-left: 3%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.main{
+  height: 90vh;
+  width: 90vw;
+  display: grid;
+  grid-gap: 50px;
+  background-color: #F5F5F5;
+  box-sizing: content-box;
+  // background-color: lightblue;
+  grid-template-areas: 
+    "dayFore dayFore dayFore dayInfo dayInfo dayInfo dayInfo"
+    "dayFore dayFore dayFore dayInfo dayInfo dayInfo dayInfo"
+    "sdCont sdCont sdCont sdCont sdCont sdCont sdCont"
+    "sdCont sdCont sdCont sdCont sdCont sdCont sdCont"
+    "sdCont sdCont sdCont sdCont sdCont sdCont sdCont"
+   ;
+}
 
 .wind{
   grid-area: wind;
@@ -21,27 +70,57 @@
 }
 .item{
   border-radius: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
 }
 .dailyInfo {
   display: grid;
+  width: 100%;
   min-height: 30vh;
   grid-template-areas: 
     "wind wind wind precip"
     "sunrise sunset clock clock"
    ;
-  grid-gap: 1em
+  grid-gap: 30px;
+
 }
-@media screen and ( max-width: 1000px ){
+@media screen and ( max-width: 768px ){
   .dailyInfo {  
-    width: 90%;
-    grid-gap: .5em;
+    
     grid-template-areas: 
       "wind wind wind "
       "sunrise sunset precip "
+
    ;
   }
   .clock{
     display: none;
   }
+  .main{
+    height: 85vh;
+    width: 90vw;
+    display: grid;
+    grid-gap: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    grid-template-areas: 
+      "dayFore "
+      "dayFore"
+      "sdCont "
+      "sdCont "
+      "sdCont "
+      
+  
+      "dayInfo "
+      
+     
+     
+     ;
+  }
+  .sevenDayContainer{
+    width: 90vw;
+    margin-top: 15px;
 
+    grid-column-gap: 38px;
+  }
 }

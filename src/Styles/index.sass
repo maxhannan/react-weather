@@ -3,25 +3,27 @@
 
 body 
   margin: 0
-  background-color: #ffffff
-  
+  background-color: #F5F5F5  
 h1, h2, h3
   margin: 0
 
 .App 
   display: flex
   flex-direction: column
+  align-items: center
   height: 100vh
   overflow: hidden
   font-family: 'Chivo', sans-serif
   color: black
   max-width: 100%
   font-weight: 300
+  
 .loadContainer
   display: flex
   align-items: center
   justify-content: center
   height: 92vh
+  width: 100vw
   background-color: #F5F5F5
   font-size: 15vw	
 .loader
@@ -39,12 +41,12 @@ h1, h2, h3
 
 .search
   height: 8vh
-
+  width: 100vw
   display: flex
   align-items: center
   justify-content: flex-end
   padding-right: 6%
-
+  margin-bottom: 2vh
   .searchSubmit
     background-color: transparent
     border: none
@@ -57,150 +59,3 @@ h1, h2, h3
     font-family: 'Chivo', sans-serif
   input:focus
     outline: none
-
-.main
-  height: 92vh
-  background-color: #d4d3d382	
-  display: flex
-  flex-direction: column
-  justify-content: center
-  
-  align-items: center
-  
-
-.dailyForecast
-  height: 45vh
-  width: 80%
-  display: grid
-  grid-template-columns: 3fr 4fr
-  grid-column-gap: 1em
-  padding-left: 1em
-  padding-right: 1em
-  // background-color: blue
-
-.dailyTemp
-  background-color: white
-  border-radius: 30px
-  display: flex
-  align-items: center
-  justify-content: center
-  flex-direction: column
-  max-height: 45vh
-  // background-color: blue
-
-.weatherIcon
-  display: flex
-  align-items: center
-  justify-content: center
-  border:
-    top-left-radius: 30px
-    top-right-radius: 30px
-  height: 65%
-  // background-color: lightblue
-  img
-    margin: 0px
-    height: 110%
-    max-height: 250px
-
-.info
-  display: grid
-  grid-auto-rows: 100px
-  grid-template-columns: 8fr 2fr 
-  height: 100%
-  width: 90%
-
-.location
-  display: flex
-  align-items: center
-  font-size: 4vh
-.temp
-  display: flex
-  align-items: center
-  font-size: 12vh
-
-
-.btnHolder
-  height: 8vh
-  width: 85%
-  // background-color: red
-  display: flex
-  align-items: center
-  justify-content: flex-end
-  padding-right: 4%
-  .celBtn, .fahBtn
-    width: 30px
-    height: 30px
-    display: flex
-    align-items: center
-    justify-content: center
-    border: 1px solid black
-    border-radius: 50%
-    margin: .5em
-
-    &:hover
-      background-color: black
-      color: white
-    &.active
-      background-color: black
-      color: white
-
-.sevenDay
-  margin-top: 5vh
-  
-  display: grid
-  height: 25vh
-  grid-gap: 1em
-  width: 80%
-  grid-template-columns: repeat(7, 1fr)
-
-.sevenItem
-  background-color: white
-  border-radius: 30px
-@media screen and ( max-width: 1000px )
-  .main
-    display: flex
-    flex-direction: column
-    align-items: center
-  .dailyTemp
-    max-height: 35vh
-    width: 90%
-  .dailyForecast
-      grid-template-columns: 1fr 
-      grid-gap: .5em
-      height: 60vh
-      width: 100%
-      margin-left: auto
-  .sevenDay
-    // background-color: red
-    width: 90%
-    margin-right: 1.5%
-    height: 18vh
-    margin-top: 2em
-    overflow: scroll
-    
-  .sevenItem
-    min-width: 100px
-    width: 18vw
-  .location
-    font-size: 2.5vh
-  .temp
-    font-size: 10vh
-  .weatherIcon
-    img
-      margin: 0px
-      height: 110%
-      max-height: 150px 
-  .search
-    justify-content: center
-    .searchSubmit
-      background-color: transparent
-      border: none
-      font-size: 5vw
-      padding-top: 1.5%
-    input
-      background-color: transparent
-      border: none
-      font-size: 6vw
-      font-family: 'Chivo', sans-serif
-    input:focus
-      outline: none
