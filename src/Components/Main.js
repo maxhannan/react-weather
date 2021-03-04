@@ -6,7 +6,7 @@ import SevenDay from './SevenDay';
 const Main = ({data}) => {
   return ( 
     <div className="main">
-      <BtnHolder/>
+      {/* <BtnHolder/> */}
       <DailyForecast data = {data.daily}/>
       <SevenDay/>
     </div>

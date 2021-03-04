@@ -63,6 +63,8 @@ h1, h2, h3
   background-color: #d4d3d382	
   display: flex
   flex-direction: column
+  justify-content: center
+  
   align-items: center
   
 
@@ -150,10 +152,15 @@ h1, h2, h3
   grid-gap: 1em
   width: 80%
   grid-template-columns: repeat(7, 1fr)
+
 .sevenItem
   background-color: white
   border-radius: 30px
 @media screen and ( max-width: 1000px )
+  .main
+    display: flex
+    flex-direction: column
+    align-items: center
   .dailyTemp
     max-height: 35vh
     width: 90%
@@ -161,10 +168,12 @@ h1, h2, h3
       grid-template-columns: 1fr 
       grid-gap: .5em
       height: 60vh
-      width: 90%
+      width: 100%
+      margin-left: auto
   .sevenDay
     // background-color: red
-    width: 90vw
+    width: 90%
+    margin-right: 2%
     height: 18vh
     margin-top: 2em
     overflow: scroll
