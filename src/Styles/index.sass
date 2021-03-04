@@ -64,6 +64,7 @@ h1, h2, h3
   display: flex
   flex-direction: column
   align-items: center
+  
 
 .dailyForecast
   height: 45vh
@@ -83,6 +84,7 @@ h1, h2, h3
   justify-content: center
   flex-direction: column
   max-height: 45vh
+  // background-color: blue
 
 .weatherIcon
   display: flex
@@ -96,12 +98,15 @@ h1, h2, h3
   img
     margin: 0px
     height: 110%
+    max-height: 250px
 
 .info
   display: grid
+  grid-auto-rows: 100px
   grid-template-columns: 8fr 2fr 
   height: 100%
   width: 90%
+
 .location
   display: flex
   align-items: center
@@ -139,6 +144,7 @@ h1, h2, h3
 
 .sevenDay
   margin-top: 5vh
+  
   display: grid
   height: 25vh
   grid-gap: 1em
@@ -157,13 +163,24 @@ h1, h2, h3
       height: 60vh
       width: 90%
   .sevenDay
-    width: 90%
-    height: 15vh
-    margin-top: 3.5em
+    // background-color: red
+    width: 90vw
+    height: 18vh
+    margin-top: 2em
     overflow: scroll
+    
   .sevenItem
     min-width: 100px
-    
+    width: 18vw
+  .location
+    font-size: 4vh
+  .temp
+    font-size: 10vh
+  .weatherIcon
+    img
+      margin: 0px
+      height: 110%
+      max-height: 150px 
   .search
     justify-content: center
     .searchSubmit
