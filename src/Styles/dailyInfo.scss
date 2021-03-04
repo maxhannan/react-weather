@@ -13,7 +13,7 @@
 .sevenDayContainer{
   display: grid;
   grid-template-columns: repeat(7,1fr);
-  grid-gap: 70px;
+  grid-gap: 35px;
   grid-area: sdCont;
 
   overflow: scroll;
@@ -25,7 +25,7 @@
   background-color: white;
   border-radius: 30px;
   height: 80%;
-  width: 120px;
+  width: 140px;
   min-width: 50px;
   margin-left: 3%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -84,13 +84,12 @@
   grid-gap: 30px;
 
 }
-@media screen and ( max-width: 768px ){
+@media screen and ( max-width: 900px ){
   .dailyInfo {  
     
     grid-template-areas: 
       "wind wind wind "
       "sunrise sunset precip "
-
    ;
   }
   .clock{
@@ -105,22 +104,20 @@
     box-sizing: border-box;
     grid-template-areas: 
       "dayFore "
-      "dayFore"
       "sdCont "
       "sdCont "
-      "sdCont "
-      
-  
       "dayInfo "
-      
-     
-     
      ;
   }
   .sevenDayContainer{
     width: 90vw;
-    margin-top: 15px;
-
-    grid-column-gap: 38px;
+    margin-top: 25px;
+    grid-column-gap: 5px;
+  }
+  .sevenItem{
+    width: 80px
+  }
+  .sevenItem7{
+    margin-right: 30px;
   }
 }

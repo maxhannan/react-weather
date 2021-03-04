@@ -45,17 +45,31 @@ h1, h2, h3
   display: flex
   align-items: center
   justify-content: flex-end
-  padding-right: 6%
+  padding-right: 10%
   margin-bottom: 2vh
   .searchSubmit
     background-color: transparent
     border: none
-    font-size: 2vw
-    padding-top: .5%
+    font-size: 1.5vw
   input
     background-color: transparent
     border: none
     font-size: 2vw
+
     font-family: 'Chivo', sans-serif
   input:focus
     outline: none
+@media screen and ( max-width: 900px )
+  .search
+    justify-content: center
+    .searchSubmit
+      background-color: transparent
+      border: none
+      font-size: 3.5vw
+      padding-top: 1%
+    input
+      background-color: transparent
+      border: none
+      width: 80%
+      font-size: 5vw
+      font-family: 'Chivo', sans-serif
