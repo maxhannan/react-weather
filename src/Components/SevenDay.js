@@ -10,7 +10,7 @@ const SevenDay = ({data}) => {
           {day.day}
           </div>
           <div className="imgContainer">
-            <img src={day.iconSrc} alt="" srcset=""/>
+            <img src={day.iconSrc} alt=""/>
           </div>
           <div className="tempContainer">
             {day.highF}°
