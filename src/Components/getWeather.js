@@ -88,9 +88,8 @@ const toCelsius = (K) => Math.floor(K - 273.15)
 const toFahrenheit = (K) => Math.floor(toCelsius(K) * (9 / 5) + 32)
 const getDay = (date) => new Date(date * 1000) // converts unix timestamp to date
 
-const getIconURL = (iconId, large = true) => { // retrieves appropiate icon url based on weather code from api
+const getIconURL = (iconId) => { // retrieves appropiate icon url based on weather code from api
   let url
-  
     switch (iconId) {
       case '01d': 
         url = oned;

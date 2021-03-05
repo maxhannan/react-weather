@@ -2,10 +2,9 @@ import { useEffect, useState } from 'react';
 import { getWeather } from './getWeather'
 import  Searchbar from './Header'
 import Loader from './Loader';
-// import styled from 'styled-components'
 import Main from './Main';
-import '../Styles/reset.sass'
-import '../Styles/main.scss'
+
+
 
 
 function App() {
@@ -44,8 +43,7 @@ function App() {
       <Searchbar getWeather = {weather}/>
       {error && <h4>Sorry... No data found, {error}</h4>}
       {pending && <Loader/>}
-      {!pending && !error && <Main  data = {data}/>}
-      
+      {!pending && !error && <Main  data = {data}/>}  
     </div>
   );
 }

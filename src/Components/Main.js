@@ -1,21 +1,20 @@
-import BtnHolder from './BtnHolder';
-import DailyInfo from "./DailyInfo";
-import DailyForecast from './DailyForecast';
-import SevenDay from './SevenDay';
-
+import Humidity from "./Forecast_Components/Humidity";
+import MainForecast from "./Forecast_Components/MainForecast"
+import Sunrise from "./Forecast_Components/Sunrise";
+import WeeklyForecast from "./Forecast_Components/WeeklyForecast";
+import Wind from "./Forecast_Components/Wind";
+import MoonPhase from "./MoonPhase";
 
 const Main = ({data}) => {
   return ( 
     <div className="main">
-      <div className="dailyForecast"/>
-      <div className="gridContainer">
-        <SevenDay data = {data}/> 
-        <DailyInfo data = {data}/>
-      </div>
+      <MainForecast data = {data.daily}/>
+      <WeeklyForecast data = {data}/>
+      <Sunrise/>
+      <Humidity />
+      <Wind />
+      <MoonPhase />
     </div>
-    
-
   );
 }
- 
 export default Main;
