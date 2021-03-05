@@ -11,7 +11,6 @@ const Main = ({data}) => {
       <MainForecast data = {data.daily}/>
       <WeeklyForecast data = {data}/>
       <Sunrise/>
-      <Humidity />
       <Wind />
       <MoonPhase />
     </div>
