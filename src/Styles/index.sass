@@ -203,7 +203,7 @@ h1, h2, h3
     font-family: 'Chivo', sans-serif
   input:focus
     outline: none
-@media screen and ( max-width: 1000px )
+@media screen and ( max-width: 800px )
   .search
     justify-content: flex-start
     width: 80vw;
@@ -224,9 +224,12 @@ h1, h2, h3
   .sevenDayContainer
     height: 30%
     display: grid
-    grid-gap: .5em   
+    grid-gap: .5em
+    overflow: scroll 
+    width: 90vw
+    padding-right: 1.5em
   .sevenItem
-      min-width: 0px
+      min-width: 80px
   .dailyForecast
     height: 25vh
   .gridContainer
