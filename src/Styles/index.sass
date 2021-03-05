@@ -60,6 +60,7 @@ h1, h2, h3
   background-color: white
   display: flex
   flex-direction: column
+  justify-content: space-around
   border-radius: 30px
   min-width: 80px
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -69,7 +70,7 @@ h1, h2, h3
   justify-content: center
   height: 40%
   img
-    max-width: 40%;
+    max-width: 30%;
     height: auto
 .dayContainer
   height: 30%
@@ -147,8 +148,8 @@ h1, h2, h3
   height: 70%
   // background-color: red
   img
-    max-width: 60%;
-    max-height: 60%;
+    max-width: 30%;
+    height: auto
 
 .sunText
 
@@ -230,10 +231,14 @@ h1, h2, h3
     overflow-y: hidden 
     width: 90vw
     padding-right: 1.5em
-    margin-top: 1em
+    margin:
+      top: 1.5em
+      bottom: 1em
+
   .sevenItem
-      min-height: 100px
+      min-height: 50px
       min-width: 80px
+      justify-content: space-between
   .dailyForecast
     height: 25vh
   .gridContainer
@@ -244,7 +249,6 @@ h1, h2, h3
   .dayContainer
     font-size: 15px
   
-
   .sunText
     font-size: 25px
   .windContainer
@@ -264,7 +268,7 @@ h1, h2, h3
   .dailyInfo
     // background-color: lightblue;
     display: grid
-    height: 75%
+    height: 60%
     padding: .8em
     // padding-top: 0px
     grid-gap: 1em
