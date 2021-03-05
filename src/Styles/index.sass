@@ -9,7 +9,7 @@ body
   background-color: #e3e3e3  
 
 .loadContainer
-  font-size: 3vw	
+  font-size: 50px
   height: 30vh
   display: flex
   align-items: center
@@ -25,7 +25,7 @@ body
 .main
   display: grid;
   grid-template:
-    areas: "mainFore mainFore mainFore mainFore""week week week week" "sunrise moon wind humid"
+    areas: "mainFore mainFore mainFore ""week week week" "sunrise moon wind" 
     rows: 1.5fr 1fr 1.2fr;
   grid-gap: 1em
   height: 88vh
@@ -34,7 +34,7 @@ body
 
 .forecastItem
   background-color: white
-  border-radius: 30px
+  border-radius: 20px
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
 .MainForecast
@@ -48,6 +48,7 @@ body
   grid-area: sunrise
 .Humidity
   grid-area: humid
+  display: none
 .Wind
   grid-area: wind
 .MoonPhase
@@ -62,7 +63,7 @@ body
   .weekItem
     min-width: 50px
     background-color: white
-    border-radius: 30px
+    border-radius: 20px
     display: flex
     flex-direction: column
     align-items: center
@@ -99,6 +100,12 @@ body
 
 @media screen and ( max-width: 1000px )
   .main
-    width: 90vw;
+    width: 95vw;
+    grid-gap: .5em
+    grid-template-rows: 2fr 1fr 1.2fr;
+  .WeeklyForecast
+    grid-gap: .5em
   .search
     width: 90vw;
+    input
+      width: 78vw;
