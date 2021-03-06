@@ -6,7 +6,7 @@
 
 body 
   margin: 0
-  background-color: #e3e3e3  
+  background-color: white
 
 .loadContainer
   font-size: 50px
@@ -25,15 +25,14 @@ body
 .main
   display: grid;
   grid-template:
-    areas: "mainFore mainFore mainFore ""week week week" "sunrise moon wind" 
-    rows: 1.5fr 1fr 1.5fr;
+    areas: "mainFore mainFore mainFore ""week week week" 
+    rows: 3fr 1fr;
   grid-gap: 1em
   height: 88vh
-  width: 50vw;
+  width: 64vw;
   animation: expand 500ms ease-in-out
 
 .forecastItem
-  background-color: white
   border-radius: 20px
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
@@ -41,8 +40,9 @@ body
   grid-area: mainFore
   display: grid
   grid-gap: 1em
-  grid-template-areas: "Mtemp Mimage"
-  grid-template-columns: 1fr 1fr 
+  grid-template-areas: "Mtemp"
+  grid-template-columns: 1fr 
+
   
   
 .mainImgContainer
@@ -64,10 +64,10 @@ body
   
 
 .MainTemp
-  flex: 1
-
+  background-color: #4d7df6
+  color: white
+  border-radius: 20px
   font-size: 3vw
-  // background-color: orange
   grid-area: Mtemp
   display: flex
   flex-direction: column
@@ -87,9 +87,10 @@ body
 .WeeklyForecast
   grid-area: week
   display: grid
-  grid-template-columns: repeat(5, 1fr)
-  grid-gap: 1em
-  padding: 5px
+  overflow: scroll
+  grid-gap: .5em
+  grid-template-columns: repeat(8, 1fr)
+  padding: 10px
   .imgContainer
     display: flex
     align-item: center
@@ -99,9 +100,10 @@ body
       width: 40px
 
   .weekItem
-    min-width: 50px
-    background-color: white
-    border-radius: 20px
+    border: 1px solid lightgray
+      radius: 30px
+    min-width: 100px
+
     display: flex
     flex-direction: column
     align-items: center
@@ -139,7 +141,7 @@ body
   .main
     width: 95vw;
     grid-gap: .5em
-    grid-template-rows: 1.5fr 1fr 1.2fr;
+
   .WeeklyForecast
     grid-gap: .5em
   .search

@@ -1,6 +1,6 @@
 import uniqid from 'uniqid'
 const WeeklyForecast = ({data}) => {
-  const fiveDays = data.sevenDay.slice(1,6)
+  const fiveDays = data.sevenDay
   return ( 
     <div className="WeeklyForecast">
       {fiveDays.map(day => {
@@ -13,7 +13,7 @@ const WeeklyForecast = ({data}) => {
             <img src={day.iconSrc} alt=""/>
           </div>
           <div className="tempContainer">
-            {day.highF}°
+            {day.highF}° / {day.lowF}°
           </div>
         </div>
       )
