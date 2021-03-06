@@ -9,7 +9,9 @@ const WeeklyForecast = ({data}) => {
           <div className="dayContainer">
           {day.day}
           </div>
-          <img src={day.iconSrc} alt=""/>
+          <div className="imgContainer">
+            <img src={day.iconSrc} alt=""/>
+          </div>
           <div className="tempContainer">
             {day.highF}°
           </div>
