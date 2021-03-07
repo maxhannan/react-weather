@@ -1,30 +1,21 @@
 import {BiSearchAlt} from 'react-icons/bi'
-import {useState} from 'react'
+import {AiOutlineClose} from 'react-icons/ai'
 
-const Searchbar = ({getWeather}) => {
-  const [search, setSearch] = useState('')
-  
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if(search !== ''){
-      getWeather(search)
-      setSearch('')
-    }
-  }
-  
+const Header = ({togMenu, data, menuOpen}) => {
+  const locData = data.location.split(',')
   return ( 
-    <div className="search">
-      <form onSubmit = {handleSubmit}>
-      <button type = 'submit' className = 'searchSubmit'><BiSearchAlt/></button>
-        <input 
-        id = 'srch'
-        type = 'text' 
-        placeholder = 'Search for places...' 
-        value = {search} 
-        onChange ={(e) => setSearch(e.target.value)}/>
-      </form>
+    <div className="locationData">
+    <h2>
+      <span style ={{fontWeight: '500', fontSize: '25pt', color: 'black'}}>
+        {locData[0]}
+      </span>
+      , {locData[1]}
+    </h2>
+    <div className="openBtnContainer" onClick = {togMenu} style = {{fontSize: '20pt'}}>
+      {!menuOpen ? <BiSearchAlt/> : <AiOutlineClose/> }
     </div>
+  </div>
   );
 }
  
-export default Searchbar;
+export default Header;

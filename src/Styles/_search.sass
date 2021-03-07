@@ -1,21 +1,32 @@
-.search
-  height: 8vh
-  width: 60vw
+.srchb
+  height: 0vh
+  width: 70vw 
+  background-color: #ccc 
+  transition: height 200ms ease-in-out
+  border-bottom-left-radius: 20px
+  border-bottom-right-radius: 20px
   display: flex
-  align-items: flex-end
-  justify-content: center
-  margin-bottom: 2vh
-
-#srch 
+  &.open
+    height: 15vh
+.srchInp
   background-color: transparent
   border: none
-  font-size: 24pt
-  font-family: 'Chivo', sans-serif
-#srch:focus
-  outline: none
-.searchSubmit
-  background-color: transparent 
-  border: none
-  font-size: 16pt
+  &:focus
+    outline: none
 
-  
+.formSrch
+  display: flex
+  display: none
+  &.open
+    display: block
+
+.openBtnContainer
+  transition: color 200ms ease
+  display: flex
+  &:hover
+    color: black
+@media screen and ( max-width: 500px )
+  .srchb
+    width: 100vw
+    &.open
+      height: 10vh

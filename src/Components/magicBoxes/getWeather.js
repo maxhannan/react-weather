@@ -30,7 +30,6 @@ export const getWeather = async (search) => {
   
   const response = await fetch(oneCallURL, { mode: 'cors' })
   const data = await response.json()
-
   return weatherFormatter(data, name)
 }
 
@@ -61,6 +60,17 @@ const weatherFormatter = (info, placeName) => {
     }
     return dayinfo
   })
+  const hourlyData = info.hourly.map(hour => {
+    const timeStr = new Date(hour.dt * 1000).toLocaleTimeString().split(':')
+    const hourInfo = {
+      hour: timeStr[0] + ':' + timeStr[2],
+      tempC: toCelsius(hour.temp),
+      tempF: toFahrenheit(hour.temp),
+      descrip: hour.weather[0].description,
+      iconSrc: getIconURL(hour.weather[0].icon)
+    }
+    return hourInfo
+  })
 
   const weatherData = {
     daily: {
@@ -77,8 +87,10 @@ const weatherFormatter = (info, placeName) => {
       descrip: current.weather[0].description,
       iconSrc: getIconURL(current.weather[0].icon)
     },
+    hourly: [...hourlyData],
     sevenDay: [...sevenDayForecast]
   }
+  console.log(weatherData)
   return weatherData
 }
 

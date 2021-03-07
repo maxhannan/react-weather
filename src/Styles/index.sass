@@ -27,29 +27,36 @@ body
   grid-template:
     columns: 1fr 1fr 1fr 1fr 
     areas: "locData locData locData locData""mainFore mainFore foreInfo foreInfo""week week week week" 
-    rows: .3fr 3fr 1fr;
-  grid-gap: 1em
-  height: 88vh
+    rows: .3fr 2.5fr 1fr;
+  grid-gap: .5em
+  height: 98vh
   width: 70vw;
   animation: expand 500ms ease-in-out
+
 .ForecastInfo
   grid-area: foreInfo
-  grid-gap: 1em
+  grid-gap: .5em
   display: grid;
   grid-template:
-    areas: "moon wind""sunrise sunrise" 
+    areas: "moon wind""sunrise humid" 
+    columns: 1fr 1fr
+    rows: 1fr 1fr
+
 .locationData
+  margin-top: 2vh
   grid-area: locData
-  font-size: 20pt
+  font-size: 25pt
   color: gray
   display: flex
-  align-items: center
-  // justify-content: center
+  align-items: center 
+  justify-content: space-between
+  padding: 
+    left: 2%
+    right: 2%
 
 .forecastItem
   border-radius: 20px
   border: 1px solid lightgray
-  // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
 .MainForecast
   background-color: #4d7df6
@@ -67,12 +74,13 @@ body
   img
     max-width: 20%
     height: auto
+  
 .imgHol
   display: flex
   align-items: center
   justify-content: center
+
 .testCont
-  // background-color: yellow
   height: 100%
   display: flex
   flex-direction: column
@@ -83,12 +91,14 @@ body
   align-items: center
   flex-direction: column
   justify-content: space-around
+
 .descripCont
   display: flex
   flex-direction: column
   align-items: center
   justify-content: center
   width: 100%
+
 .btnContainer
   display: flex
   width: 100%
@@ -96,11 +106,11 @@ body
   align-items: center
   padding: 2%
   h2
-    margin-right: auto
-    
+    margin-right: auto   
     padding-left: 2%
     font-size: 20pt
     color: lightgray
+
 .btn
   background-color: white
   border-radius: 50%
@@ -122,15 +132,66 @@ body
     background-color: black
     color: white
     opacity: .8
+
 .sunrise
   grid-area: sunrise
+
 .moon
   grid-area: moon
+  display: flex
+  text-align: center
+  font-size: 20pt
+  flex-direction: column
+  align-items: center
+  justify-content: space-around
+  padding: 5%
+.moonIcon
+  font-size: 8vw
+  display: flex
+  color: #4d7df6
+
 .wind
   grid-area: wind
+  display: flex
+  font-size: 20pt  
+  text-align: center
+  flex-direction: column
+  align-items: center
+  justify-content: space-around
+  padding: 5%
+.windIcon
+  animation: spin 1.5s linear
+  display: flex
+  color: #4d7df6
+  font-size: 8vw
+
+.humidity
+  grid-area: humid
+
+.weekContainer
+  grid-area: week
+  display: flex
+  flex-direction: column
+.selectorBtn
+  font-size: 20pt
+  display: flex
+  align-items: center
+  padding-left: 1%
+  height: 20%
+.todayBtn,.weekBtn
+  color: gray
+  font-size: 20pt
+  margin-right: 2%
+  transition: color 500ms
+  &:hover
+    color: #4d7df6
+    cursor: pointer   
+  &.active
+    color: black
+    font-weight: 400
 
 .WeeklyForecast
-  grid-area: week
+  height: 80%
   display: grid
   overflow: scroll
   grid-gap: .5em
@@ -155,44 +216,37 @@ body
     align-items: center
     justify-content: space-around
 
-   
+  
 
-
-.arrow
-  font-size: 100px
-  animation: arrow 1s linear
-
-
+// Animations
 @keyframes spin
   0%
     transform: rotate(0deg)
   100%
     transform: rotate(360deg)
-@keyframes arrow
-  0%
-    transform: rotate(0deg)
-  100%
+
 @keyframes expand 
   0%
     transform: translateY(100vw)
     opacity: 0
   50%
-    opacity: 1
-    
+    opacity: 1   
   100%
     transform: translateY(0);
     
   
-
-@media screen and ( max-width: 768px )
+@media screen and ( max-width: 1200px  )
   .main
+    width: 95vw
+@media screen and ( max-width: 550px )
+  .main
+    margin-top: 2vh
     grid-template:
       areas: "locData locData locData locData""mainFore mainFore mainFore mainFore""week week week week""foreInfo foreInfo foreInfo foreInfo" 
-      rows: 4vh 50vh 20vh 60vh;
-    grid-gap: 1.5em
-    height: 150vh
-    width: 90vw;
-    
+      rows: 8vh 45vh 20vh 40vh;
+    grid-gap: .5em
+    height: 120vh
+
   .MainForecast
     width: 100%
     font-size: 30pt
@@ -212,5 +266,7 @@ body
       background-color: transparent 
       border: none
       font-size: 10pt
-
-
+  .moon, .wind
+    font-size: 12pt
+  .moonIcon, .windIcon
+    font-size: 60pt
