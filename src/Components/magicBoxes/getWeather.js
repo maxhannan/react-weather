@@ -1,22 +1,22 @@
 // Grabs Weather Data and return formatted info
-import oned from '../assets/01d.png'
-import onen from '../assets/01n.png'
-import twod from '../assets/02d.png'
-import twon from '../assets/02n.png'
-import threed from '../assets/03d.png'
-import threen from '../assets/03n.png'
-import fourd from '../assets/04d.png'
-import fourn from '../assets/04n.png'
-import nined from '../assets/09d.png'
-import ninen from '../assets/09n.png'
-import tend from '../assets/10d.png'
-import tenn from '../assets/10n.png'
-import elevend from '../assets/11d.png'
-import elevenn from '../assets/11n.png'
-import thirtd from '../assets/13d.png'
-import thirtn from '../assets/13n.png'
-import fifd from '../assets/50d.png'
-import fifn from '../assets/50n.png'
+import oned from '../../assets/01d.png'
+import onen from '../../assets/01n.png'
+import twod from '../../assets/02d.png'
+import twon from '../../assets/02n.png'
+import threed from '../../assets/03d.png'
+import threen from '../../assets/03n.png'
+import fourd from '../../assets/04d.png'
+import fourn from '../../assets/04n.png'
+import nined from '../../assets/09d.png'
+import ninen from '../../assets/09n.png'
+import tend from '../../assets/10d.png'
+import tenn from '../../assets/10n.png'
+import elevend from '../../assets/11d.png'
+import elevenn from '../../assets/11n.png'
+import thirtd from '../../assets/13d.png'
+import thirtn from '../../assets/13n.png'
+import fifd from '../../assets/50d.png'
+import fifn from '../../assets/50n.png'
 export const getWeather = async (search) => {
   // openWeather Key
   const apiKey = '070d5b93cd86e7baa71b2a5bf2276467'
@@ -57,7 +57,7 @@ const weatherFormatter = (info, placeName) => {
       highF: toFahrenheit(day.temp.max),
       lowF: toFahrenheit(day.temp.min),
       descrip: day.weather[0].description,
-      iconSrc: getIconURL(day.weather[0].icon, false)
+      iconSrc: getIconURL(day.weather[0].icon)
     }
     return dayinfo
   })
@@ -65,7 +65,7 @@ const weatherFormatter = (info, placeName) => {
   const weatherData = {
     daily: {
       location: placeName,
-      time: getDay(current.dt),
+      time: getDay(current.dt).toDateString().split(' ').splice(0,3).join(' '),
       timeStr: getDay(current.dt).toLocaleTimeString(),
       day: weekDay[getDay(current.dt).getDay()],
       tempC: toCelsius(current.temp),

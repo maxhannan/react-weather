@@ -1,5 +1,5 @@
 import uniqid from 'uniqid'
-const WeeklyForecast = ({data}) => {
+const WeeklyForecast = ({isCel, togCel, data}) => {
   const fiveDays = data.sevenDay
   return ( 
     <div className="WeeklyForecast">
@@ -13,7 +13,7 @@ const WeeklyForecast = ({data}) => {
             <img src={day.iconSrc} alt=""/>
           </div>
           <div className="tempContainer">
-            {day.highF}° / {day.lowF}°
+            {isCel ? day.lowC : day.lowF}° / {isCel ? day.highC : day.highF}°
           </div>
         </div>
       )

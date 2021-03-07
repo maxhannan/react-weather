@@ -17,6 +17,7 @@ const Searchbar = ({getWeather}) => {
       <form onSubmit = {handleSubmit}>
       <button type = 'submit' className = 'searchSubmit'><BiSearchAlt/></button>
         <input 
+        id = 'srch'
         type = 'text' 
         placeholder = 'Search for places...' 
         value = {search} 

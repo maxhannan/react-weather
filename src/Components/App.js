@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getWeather } from './getWeather'
+import { getWeather } from './magicBoxes/getWeather'
 import  Searchbar from './Header'
 import Loader from './Loader';
 import Main from './Main';
@@ -11,12 +11,6 @@ function App() {
   const [data, setData] = useState(null)
   const [pending, setPending] = useState(true)
   const [error, setError] = useState(null)
-  const [isCelsius, setisCelsius] = useState(false)
-
-  const togCelsius = () => {
-    console.log('working')
-    setisCelsius((isCelsius) => !isCelsius)
-  }
   
   const weather = async (search) => {
     setPending(true)
