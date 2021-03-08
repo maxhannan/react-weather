@@ -15,7 +15,7 @@ const Main = ({menuOpen, togMenu, data}) => {
     <div className="main">
       <Header togMenu = {togMenu} menuOpen = {menuOpen} data = {data.daily}/>
       <MainForecast isCel = {isCelsius} togCel = {togCelsius} info = {data}/>
-      <ForecastInfo data = {data.daily} />
+      <ForecastInfo isCel = {isCelsius} data = {data.daily} />
       <WeeklyForecast isCel = {isCelsius} togCel = {togCelsius}  data = {data}/>
     </div>
   );

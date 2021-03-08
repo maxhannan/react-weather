@@ -1,18 +1,14 @@
 import MoonPhase from './moonPhase';
-import {WiWindDeg} from 'react-icons/wi'
-const ForecastInfo = ({data}) => {
+import Wind from './Wind';
+import Sunrise from './Sunrise';
+import FeelsLike from './FeelsLike';
+const ForecastInfo = ({isCel, data}) => {
   return ( 
     <div className="ForecastInfo">
-      <div className=" forecastItem wind">
-        <h4 style = {{fontWeight: '400'}}>Wind</h4>
-        <div className="windIcon">
-          <WiWindDeg style = {{transform: `rotate(${data.windDir}deg)`}}/>
-        </div>
-        <h4>{data.wind} mph</h4> 
-      </div>
+      <Wind data = {data} />
       <MoonPhase />
-      <div className="forecastItem sunrise"></div>
-      <div className="forecastItem humidity"></div>
+      <Sunrise  data = {data} />
+      <FeelsLike data = {data} isCel = {isCel} />
     </div>
   );
 }

@@ -85,6 +85,8 @@ const weatherFormatter = (info, placeName) => {
       sunrise: sunrise.toLocaleTimeString().split(':').slice(0,2).join(':'),
       humidity: current.humidity,
       descrip: current.weather[0].description,
+      feelsLikeC: toCelsius(current.feels_like),
+      feelsLikeF: toFahrenheit(current.feels_like),
       iconSrc: getIconURL(current.weather[0].icon)
     },
     hourly: [...hourlyData],

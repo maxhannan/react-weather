@@ -6,26 +6,55 @@
   border-bottom-left-radius: 20px
   border-bottom-right-radius: 20px
   display: flex
+  align-items: center
+  justify-content: center
   &.open
     height: 15vh
 .srchInp
+  font-family: 'Chivo', sans-serif
   background-color: transparent
   border: none
+  font-size: 3vw
   &:focus
     outline: none
 
 .formSrch
   display: flex
   display: none
+  align-items: center
+  border-bottom: 1px solid gray
+
   &.open
     display: block
-
+  button
+    border: none
+    background-color: transparent
+    font-size: 2vw
+    color: gray
+    &:hover
+      color: #4d7df6
+    &:focus
+      outline: none
+    &:active
+      transform: scale(.95)
 .openBtnContainer
   transition: color 200ms ease
   display: flex
   &:hover
-    color: black
-@media screen and ( max-width: 500px )
+    color: #4d7df6
+  &:active
+    transform: scale(.95)
+@media screen and ( max-width: 1200px  )
+  .srchb
+    width: 95vw
+  .srchInp
+    font-size: 6vw
+  .formSrch
+    button
+      font-size: 5vw
+
+
+@media screen and ( max-width: 550px )
   .srchb
     width: 100vw
     &.open

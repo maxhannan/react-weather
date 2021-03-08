@@ -13,7 +13,6 @@ const MainForecast = ({isCel, togCel, info}) => {
   return ( 
     <div className="MainForecast">   
       <div className="btnContainer">
-        {/* <h2 style ={{fontWeight: '400'}}>{data.time}</h2> */}
         <div 
         onClick = {handleUnitChange}
         className={fahActive ? "active btn cel" : "btn cel" }

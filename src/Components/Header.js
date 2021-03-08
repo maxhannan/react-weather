@@ -6,7 +6,7 @@ const Header = ({togMenu, data, menuOpen}) => {
   return ( 
     <div className="locationData">
     <h2>
-      <span style ={{fontWeight: '500', fontSize: '25pt', color: 'black'}}>
+      <span style ={{fontWeight: '500', fontSize: '25pt', color: '#4d7df6'}}>
         {locData[0]}
       </span>
       , {locData[1]}
