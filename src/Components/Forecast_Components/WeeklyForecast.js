@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import uniqid from 'uniqid'
 const WeeklyForecast = ({isCel, togCel, data}) => {
-  const fiveDays = data.sevenDay
+  const sevenDays = data.sevenDay
   const hourly = data.hourly.slice(0,8)
   const [showWeek, setShowWeek] = useState(false)
 
@@ -33,7 +33,7 @@ const WeeklyForecast = ({isCel, togCel, data}) => {
             </div>
           )
         })}
-        {showWeek && fiveDays.map(day => {
+        {showWeek && sevenDays.map(day => {
         return (
           <div key = {uniqid()} className="forecastItem weekItem">
             <div className="dayContainer">
