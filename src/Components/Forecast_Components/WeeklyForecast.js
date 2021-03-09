@@ -2,8 +2,8 @@ import { useState } from 'react'
 import uniqid from 'uniqid'
 const WeeklyForecast = ({isCel, togCel, data}) => {
   const sevenDays = data.sevenDay
-  const hourly = data.hourly.slice(0,8)
-  const [showWeek, setShowWeek] = useState(false)
+  const hourly = data.hourly.slice(0,25)
+  const [showWeek, setShowWeek] = useState(true)
 
   const handleChange = (e) => {
     const target = e.target.id
@@ -14,10 +14,10 @@ const WeeklyForecast = ({isCel, togCel, data}) => {
   return ( 
     <div className="weekContainer">
       <div className="selectorBtn">
-          <div id = 'td' onClick = {handleChange} className={showWeek ? "todayBtn" :"todayBtn active"}>Today</div>
           <div id = 'week' onClick = {handleChange}  className={showWeek ? "weekBtn active" : "weekBtn"}>Week</div>
+          <div id = 'td' onClick = {handleChange} className={showWeek ? "todayBtn" :"todayBtn active"}>24 Hour </div>
       </div>
-      <div className="WeeklyForecast">
+      <div className={showWeek ? "WeeklyForecast" : "hourlyForecast"}>
         {!showWeek && hourly.map(hour => {
           return (
             <div key = {uniqid()} className="forecastItem weekItem">

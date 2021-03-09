@@ -1,7 +1,7 @@
 .srchb
   height: 0vh
   width: 70vw 
-  background-color: #ccc 
+  background-color: #4d7df6 
   transition: height 200ms ease-in-out
   border-bottom-left-radius: 20px
   border-bottom-right-radius: 20px
@@ -10,49 +10,55 @@
   justify-content: center
   &.open
     height: 15vh
+
 .srchInp
   font-family: 'Chivo', sans-serif
   background-color: transparent
   border: none
+  color: white
   font-size: 3vw
   &:focus
     outline: none
+::placeholder
+  color: white
 
 .formSrch
   display: flex
   display: none
   align-items: center
-  border-bottom: 1px solid gray
-
+  border-bottom: 1px solid white
   &.open
     display: block
   button
     border: none
     background-color: transparent
     font-size: 2vw
-    color: gray
+    color: white
+    cursor: pointer
     &:hover
-      color: #4d7df6
+      color: #252525
     &:focus
       outline: none
     &:active
       transform: scale(.95)
+      
 .openBtnContainer
   transition: color 200ms ease
   display: flex
+  cursor: pointer
   &:hover
     color: #4d7df6
   &:active
     transform: scale(.95)
+
 @media screen and ( max-width: 1200px  )
   .srchb
     width: 95vw
   .srchInp
-    font-size: 5vw
+    font-size: 5.5vw
   .formSrch
     button
-      font-size: 4vw
-
+      font-size: 3.5vw
 
 @media screen and ( max-width: 550px )
   .srchb

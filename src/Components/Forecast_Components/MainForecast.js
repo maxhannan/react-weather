@@ -3,6 +3,7 @@ import { useState } from "react";
 const MainForecast = ({isCel, togCel, info}) => {
   const [fahActive, setFahActive] = useState(true)
   const data = info.daily
+
   const handleUnitChange = (e) => {
     const target = e.target.id
     if((fahActive && target === 'cel') || (!fahActive && target === 'fah') ){
@@ -10,6 +11,7 @@ const MainForecast = ({isCel, togCel, info}) => {
       togCel()
     }
   }
+  
   return ( 
     <div className="MainForecast">   
       <div className="btnContainer">
@@ -17,11 +19,12 @@ const MainForecast = ({isCel, togCel, info}) => {
         onClick = {handleUnitChange}
         className={fahActive ? "active btn cel" : "btn cel" }
         id = 'fah'
-        >F°</div>
+        >°F</div>
         <div
         onClick = {handleUnitChange} 
         id = 'cel'
-        className={!fahActive ? "active btn fah" : "btn fah" }>C°</div>
+        className={!fahActive ? "active btn fah" : "btn fah" }
+        >°C</div>
       </div>
       <div className="testCont">
         <div className="imgTempCont">
