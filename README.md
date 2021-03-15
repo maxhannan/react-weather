@@ -1,10 +1,4 @@
-<div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="React Weather" />
 
-  &#xa0;
-
-  <!-- <a href="https://reactweather.netlify.app">Demo</a> -->
-</div>
 
 <h1 align="center">React Weather</h1>
 
